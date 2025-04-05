@@ -1,21 +1,29 @@
 import { useState } from 'react';
 import videoBg from '../assets/BG_VIDEO.mp4'; 
 import { Link } from 'react-router-dom';
+import GenderCheckbox from '../components/GenderCheckBox';
+import useSignup from '../hooks/useSignup.js';
 
 function Signup() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
+    confirmPassword: '',
+    gender: ''
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleCheckboxChange = (gender) =>{
+    setFormData({...formData,gender})
+  }
 
-  const handleSubmit = (e) => {
+  const {loading,signup} = useSignup()
+
+  const handleSubmit = async(e) => {
+    console.log("inside handler")
     e.preventDefault();
-    console.log('Signup data:', formData);
+    await signup(formData)
+
   };
 
   return (
@@ -39,7 +47,7 @@ function Signup() {
               type="text"
               name="name"
               value={formData.name}
-              onChange={handleChange}
+              onChange={(e)=>setFormData({...formData, name: e.target.value})}
               required
               className="w-full px-4 py-2 border rounded-lg bg-transparent text-white 
                          focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-300"
@@ -53,7 +61,7 @@ function Signup() {
               type="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}
+              onChange={(e)=>setFormData({...formData, email: e.target.value})}
               required
               className="w-full px-4 py-2 border rounded-lg bg-transparent text-white 
                          focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-300"
@@ -67,7 +75,21 @@ function Signup() {
               type="password"
               name="password"
               value={formData.password}
-              onChange={handleChange}
+              onChange={(e)=>setFormData({...formData, password: e.target.value})}
+              required
+              className="w-full px-4 py-2 border rounded-lg bg-transparent text-white 
+                         focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-300"
+              placeholder="Enter your password"
+            />
+          </div>
+    
+          <div>
+            <label className="block mb-1 text-gray-200">Confirm Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.confirmPassword}
+              onChange={(e)=>setFormData({...formData, confirmPassword: e.target.value})}
               required
               className="w-full px-4 py-2 border rounded-lg bg-transparent text-white 
                          focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-300"
@@ -75,7 +97,10 @@ function Signup() {
             />
           </div>
 
+          <GenderCheckbox  onCheckboxChange={handleCheckboxChange} selectedGender = {formData.gender}   />
+
           <button
+          onClick={()=>console.log("clicked")}
             type="submit"
             className="w-full bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition"
           >

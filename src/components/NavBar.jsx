@@ -17,13 +17,13 @@ const NavBar = () => {
           <Link to="/first-aid" className="hover:text-gray-300">
             First Aid
           </Link>
-          <Link to="/checkfam" className="hover:text-gray-300">
+          <Link to="/family-lookup" className="hover:text-gray-300">
             Check Fam
           </Link>
-          <Link to="/login" className="py-1 px-3 overflow-hidden bg-red-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+          <Link to="/login" className="py-1 px-3 overflow-hidden bg-red-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
             Log In
           </Link>
-          <Link to={"/signup"} className="py-1 px-3 overflow-hidden bg-red-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+          <Link to={"/signup"} className="py-1 px-3 overflow-hidden bg-red-700 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
             Sign Up
           </Link>
         </nav>
