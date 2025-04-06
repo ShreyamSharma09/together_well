@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import videoBg from '../assets/BG_VIDEO.mp4'; 
 import { Link } from 'react-router-dom';
+import useLogin from '../hooks/useLogin';
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+const [email,setEmail] = useState("")
+const [password,setPassword] = useState("")
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = (e) => {
+  const {loading,login} = useLogin()
+
+  
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log('Login data:', formData);
+    await login(email,password)
   };
 
   return (
@@ -37,8 +37,8 @@ function Login() {
             <input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               required
               className="w-full px-4 py-2 border rounded-lg bg-transparent text-white 
                          focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-300"
@@ -51,8 +51,8 @@ function Login() {
             <input
               type="password"
               name="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
               required
               className="w-full px-4 py-2 border rounded-lg bg-transparent text-white 
                          focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-300"

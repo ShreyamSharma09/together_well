@@ -1,190 +1,112 @@
 import React from "react";
-import bg from "../assets/BG_VIDEO.mp4";
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer.jsx"
+import Footer from "../components/Footer.jsx";
 import { Timeline } from "../components/Timeline";
 
 const HomePage = () => {
-    const data = [
-        {
-          title: "Track Your Family's Health",
-          content: (
-            <div>
-              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                Easily Tracks Health of whole Family with easy navigation
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="https://assets.aceternity.com/templates/startup-1.webp"
-                  alt="startup template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/templates/startup-2.webp"
-                  alt="startup template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/templates/startup-3.webp"
-                  alt="startup template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/templates/startup-4.webp"
-                  alt="startup template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-              </div>
-            </div>
-          ),
-        },
-        {
-          title: "Medical Report Analysis",
-          content: (
-            <div>
-              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                Reads and recommends dietery and medications according to the past medical records.
-              </p>
-              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                Lorem ipsum is for people who are too lazy to write copy. But we are
-                not. Here are some more example of beautiful designs 
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="https://assets.aceternity.com/pro/hero-sections.png"
-                  alt="hero template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/features-section.png"
-                  alt="feature template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-            <img
-                  src="https://assets.aceternity.com/pro/bento-grids.png"
-                  alt="bento template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/cards.png"
-                  alt="cards template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-              </div>
-            </div>
-          ),
-        },
-        {
-          title: "Medication Reminder",
-          content: (
-            <div>
-              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-                Reminded 3 missedmedications today !
-              </p>
-              <div className="mb-8">
-                <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                  ✅ Took my medications on time
-                </div>
-                <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                  ✅ Visible Results & Overall Improvement
-                </div>
-                <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                  ✅ Upload your Medical reports
-                </div>
-                <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                  ✅ Not a single generic advisory prescribed
-                </div>
-                <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                  ✅ Easy to Navigate for elderly
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="https://assets.aceternity.com/pro/hero-sections.png"
-                  alt="hero template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/features-section.png"
-                  alt="feature template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/pro/bento-grids.png"
-                  alt="bento template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-                <img
-                  src="https://assets.aceternity.com/cards.png"
-                  alt="cards template"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                />
-              </div>
-            </div>
-          ),
-        },];
-        return (
-            <div className="relative w-screen h-screen overflow-auto">
-              <video
-                src={bg}
-                className="absolute top-0 left-0 h-screen w-screen object-cover z-0"
-                autoPlay
-                loop
-                muted
-              ></video>
-          
-              <NavBar />
-          
-              <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-                <h1 className="text-white text-3xl md:text-5xl font-bold">
-                  Your Health, Your Journey — Track, Improve, Thrive.
-                </h1>
-                <h2 className="text-white text-xl md:text-2xl mt-4">
-                  Individual health tracking with their Family members.
-                </h2>
-                <form className="mt-8 w-full max-w-md">
-                  <input
-                    type="text"
-                    name="chat"
-                    className="w-full px-4 py-2 border bg-white text-red-900 
-                               focus:outline-none focus:ring-2 focus:ring-red-400 placeholder-gray-600"
-                    placeholder="Talk to Med Cat!"
-                  />
-                </form>
-              </div>
-          
-              <div className="w-full h-full relative z-10 backdrop-blur-md bg-zinc-900">
-                <Timeline data={data} />
-                <Footer />
-              </div>
+  const data = [
+    {
+      title: "Track Your Family's Health",
+      content: (
+        <div>
+          <p className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white drop-shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,192,203,0.6)] transition-all duration-300">
+            Easily track your whole family's health with a smooth, intuitive experience.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Images or illustrations can be added here */}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Medical Report Analysis",
+      content: (
+        <div className="mt-6">
+  <p className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white drop-shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,192,203,0.6)] transition-all duration-300">
+    Get diet and medication recommendations based on your health history.
+  </p>
+  <p className="text-lg font-semibold text-gray-600 dark:text-gray-300 mt-2 drop-shadow-sm hover:drop-shadow-[0_0_8px_rgba(255,182,193,0.5)] transition-all duration-300">
+    Personalized and intelligent suggestions — no generic advice.
+  </p>
 
-            </div>
-          );
-          
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+    {/* You can place any visuals or illustrations here */}
+  </div>
+</div>
+
+
+      ),
+    },
+    {
+      title: "Medication Reminder",
+      content: (
+        <div>
+          <p className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white drop-shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,192,203,0.6)] transition-all duration-300">
+            Never miss a dose again—3 reminders already sent today!
+          </p>
+          <ul className="text-lg font-semibold text-gray-600 dark:text-gray-300 mt-2 drop-shadow-sm hover:drop-shadow-[0_0_8px_rgba(255,182,193,0.5)] transition-all duration-300">
+            <li>Took medications on time</li>
+            <li>Visible results & improvement</li>
+            <li>Upload medical reports</li>
+            <li>No generic advisory</li>
+            <li>Easy to use for elders</li>
+          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {/* Images or illustrations can be added here */}
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#FCE3EC] via-[#F9F8FD] to-[#E0EAFC] text-gray-900">
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center h-[90vh] px-6 md:px-12 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 leading-tight tracking-tight">
+          Wellbeing of Your Family,
+          <br className="hidden md:inline" />
+          <span className="text-purple-600">Backed by Smart Insights</span>
+        </h1>
+        <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl">
+          Personalized recommendations for every member. Track, scan, and thrive—together.
+        </p>
+        <form className="mt-8 w-full max-w-md">
+          <input
+            type="text"
+            name="chat"
+            className="w-full px-5 py-3 rounded-xl bg-white shadow-md border border-gray-300 text-gray-800
+                       focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder-gray-500 transition"
+            placeholder="Talk to Med Cat!"
+          />
+        </form>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="w-full px-4 py-16 md:px-12 bg-white/70 backdrop-blur-sm">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+            Wellbeing of the Whole Family
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Personalized recommendations to help your family live healthier, together.
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Here’s a timeline of how we support your journey.
+          </p>
+        </div>
+
+        {/* Timeline inside styled card */}
+        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 transition-all duration-300 hover:shadow-2xl">
+          <Timeline data={data} />
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default HomePage;
